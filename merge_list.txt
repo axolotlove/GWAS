@@ -1,3 +1,0 @@
-EUR_1KG_chr5_nodup.bed EUR_1KG_chr5_nodup.bim EUR_1KG_chr5_nodup.fam
-EUR_1KG_chr7_nodup.bed EUR_1KG_chr7_nodup.bim EUR_1KG_chr7_nodup.fam
-EUR_1KG_chr11_nodup.bed EUR_1KG_chr11_nodup.bim EUR_1KG_chr11_nodup.fam
