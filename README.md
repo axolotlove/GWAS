@@ -17,6 +17,8 @@
 
 ~/GWAS/plink_linux_x86_64_20200219/plink --bfile ~/GWAS/EUR_1KG/EUR_1KG_genome_nodup --allow-no-sex --pheno ~/GWAS/Pheno2/simulation/Ysim_plink2.txt --tail-pheno 0 --assoc --out plink3
 
+#lsea_table - реформатированный аутпут plink3.assoc
+
 4.Анализ LSEA
 
 python3 ~/GWAS/ukb_phewas/LSEA/LSEA.py -af ~/GWAS/lsea_table -sn ~/GWAS/snpEff_latest_core/snpEff/scripts/snpEff -pld ~/GWAS/plink_linux_x86_64_20200219/plink -bf ~/GWAS/EUR_1KG/EUR_1KG_genome_nodup -p
