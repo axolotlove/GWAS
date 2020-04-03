@@ -20,3 +20,5 @@
 4.Анализ LSEA
 
 python3 ~/GWAS/ukb_phewas/LSEA/LSEA.py -af ~/GWAS/lsea_table -sn ~/GWAS/snpEff_latest_core/snpEff/scripts/snpEff -pld ~/GWAS/plink_linux_x86_64_20200219/plink -bf ~/GWAS/EUR_1KG/EUR_1KG_genome_nodup -p
+
+#На LSEA пока остановился, так как проблемы с snpEff
