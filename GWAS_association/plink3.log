@@ -1,0 +1,29 @@
+PLINK v1.90b6.16 64-bit (19 Feb 2020)
+Options in effect:
+  --allow-no-sex
+  --assoc
+  --bfile /home/axolotlove/GWAS/EUR_1KG/EUR_1KG_genome_nodup
+  --out plink3
+  --pheno /home/axolotlove/GWAS/Pheno2/simulation/Ysim_plink2.txt
+  --tail-pheno 0
+
+Hostname: Blade
+Working directory: /home/axolotlove/GWAS
+Start time: Fri Apr  3 13:46:42 2020
+
+Random number seed: 1585910802
+15916 MB RAM detected; reserving 7958 MB for main workspace.
+1763045 variants loaded from .bim file.
+503 people (0 males, 0 females, 503 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to plink3.nosex .
+100 phenotype values present after --pheno.
+--tail-pheno: 100 phenotype values remaining.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 503 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+1763045 variants and 503 people pass filters and QC.
+Among remaining phenotypes, 51 are cases and 49 are controls.  (403 phenotypes
+are missing.)
+Writing C/C --assoc report to plink3.assoc ... done.
+
+End time: Fri Apr  3 13:46:44 2020
