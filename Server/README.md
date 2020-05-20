@@ -1,4 +1,4 @@
-GWAS_2
+# GWAS_2
 1. Симуляция гаплотипов через hapgen2 по данным 1000GP_Phase3
 
 hapdir=~/1000GP_Phase3
