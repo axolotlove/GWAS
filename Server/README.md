@@ -31,6 +31,7 @@ plink --merge-list file_list --make-bed --out genotypes_genome_hapgen.controls
 ```
 
 3. Отбор вариант
+```{r, engine=bash}
 ~/plink/plink --bfile genotypes_genome_hapgen.controls --extract caspase_list.txt \
 --make-bed --out genotypes_hapgen.controls.caspase
 
@@ -40,14 +41,17 @@ shuf -n 985 snps.map > snps.subset.map
 
 ~/plink/plink --bfile genotypes_genome_hapgen.controls --extract snps.subset.map \
 --make-bed --out genotypes_subset_hapgen.controls
+```
 
 4. Построение фенотипа (см R_script2.R)
 5. Ассоциация через plink
+```{r, engine=bash}
 cat Y_caspase | awk 'BEGIN { FS="\t"; OFS="\t" } { $1=$1 "\t" $1 } 1' > Y_caspase1 
 cat Y_caspase1 | awk '{FS="\t";OFS="\t"} {sub("id1_","id2_",$2)}1' > Y_caspase2
 cat Y_caspase2 | tr -d '"' > Y_caspase3
 
 ~/GWAS/plink_linux_x86_64_20200219/plink --bfile ~/GWAS/Server/pathway/genotypes_subset_hapgen.controls \
 --allow-no-sex --pheno ~/GWAS/Server/pathway/Y_caspase3 --all-pheno --assoc qt-means --out A_caspase
+```
 
 
