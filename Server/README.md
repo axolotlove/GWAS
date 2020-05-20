@@ -1,7 +1,7 @@
 GWAS_2
 1. Симуляция гаплотипов через hapgen2 по данным 1000GP_Phase3
-hapdir=~/1000GP_Phase3
 
+hapdir=~/1000GP_Phase3
 for chr in `seq 1 22`; do
 	gunzip $hapdir/1000GP_Phase3_chr${chr}.legend.gz
 	gunzip $hapdir/1000GP_Phase3_chr${chr}.hap.gz
