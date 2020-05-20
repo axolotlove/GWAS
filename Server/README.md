@@ -1,21 +1,23 @@
 # GWAS_2
 1. Симуляция гаплотипов через hapgen2 по данным 1000GP_Phase3
 
+```{r, engine=bash}
 hapdir=~/1000GP_Phase3
 for chr in `seq 1 22`; do
 	gunzip $hapdir/1000GP_Phase3_chr${chr}.legend.gz
 	gunzip $hapdir/1000GP_Phase3_chr${chr}.hap.gz
-
 	dummyDL=`sed -n '2'p $hapdir/1000GP_Phase3_chr${chr}.legend | cut -d ' ' -f 2`
-	~/hapgen2/hapgen2 -m $hapdir/genetic_map_chr${chr}_combined_b37.txt \
+	hapgen2 -m $hapdir/genetic_map_chr${chr}_combined_b37.txt \
         -l $hapdir/1000GP_Phase3_chr${chr}.legend \
         -h $hapdir/1000GP_Phase3_chr${chr}.hap -o ~/hapgen_results/genotypes_chr${chr}_hapgen \
         -dl $dummyDL 0 0 0 -n 1000 0 -no_haps_output 
-
 	rm $hapdir/1000GP_Phase3_chr${chr}.hap
 done
+```
 
 2. Конвертация полученных гаплотипов в формат plink
+
+```{r, engine=bash}
 for chr in `seq 1 22`; do
         plink --data genotypes_chr${chr}_hapgen.controls \
         --oxford-single-chr $chr \
@@ -26,6 +28,7 @@ for chr in `seq 1 22`; do
 done
 
 plink --merge-list file_list --make-bed --out genotypes_genome_hapgen.controls
+```
 
 3. Отбор вариант
 ~/plink/plink --bfile genotypes_genome_hapgen.controls --extract caspase_list.txt \
